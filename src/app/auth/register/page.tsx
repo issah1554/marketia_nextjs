@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RegisterForm from "./register-form";
 
 export default function RegisterPage() {
   return (
@@ -9,35 +10,7 @@ export default function RegisterPage() {
       <h1 className="mt-2 text-2xl font-semibold text-main-950">
         Create your workspace
       </h1>
-      <form className="mt-6 space-y-4">
-        <label className="block">
-          <span className="text-sm font-medium text-main-700">Full name</span>
-          <input
-            className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
-            placeholder="Jane Founder"
-            type="text"
-          />
-        </label>
-        <label className="block">
-          <span className="text-sm font-medium text-main-700">Email address</span>
-          <input
-            className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
-            placeholder="you@example.com"
-            type="email"
-          />
-        </label>
-        <label className="block">
-          <span className="text-sm font-medium text-main-700">Password</span>
-          <input
-            className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
-            placeholder="Create password"
-            type="password"
-          />
-        </label>
-        <button className="w-full rounded-full bg-primary-700 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-900/15 transition hover:bg-primary-800">
-          Create Account
-        </button>
-      </form>
+      <RegisterForm />
       <p className="mt-5 text-center text-sm text-main-600">
         Already registered?{" "}
         <Link className="font-semibold text-primary-700" href="/auth/login">
