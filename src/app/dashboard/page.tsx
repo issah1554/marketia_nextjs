@@ -15,11 +15,11 @@ const actionPlan = [
 
 export default function UserDashboard() {
   return (
-    <main className="min-h-screen bg-main-50 text-main-900">
-      <header className="border-b border-main-200 bg-main-0 px-4 py-4 md:px-8">
+    <main className="min-h-screen text-main-900">
+      <header className="px-4 py-4 md:px-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link className="flex items-center gap-3" href="/">
-            <div className="grid size-10 place-items-center rounded-md bg-primary-700 text-sm font-black text-white">
+            <div className="grid size-10 place-items-center rounded-full bg-primary-700 text-sm font-black text-white shadow-lg shadow-primary-900/10">
               M
             </div>
             <div>
@@ -28,7 +28,7 @@ export default function UserDashboard() {
             </div>
           </Link>
           <Link
-            className="rounded-md border border-main-300 px-3 py-2 text-sm font-semibold text-main-800 hover:bg-main-100"
+            className="rounded-full border border-main-300 bg-main-0/80 px-4 py-2 text-sm font-semibold text-main-800 shadow-sm hover:bg-main-0"
             href="/auth/login"
           >
             Sign Out
@@ -53,7 +53,7 @@ export default function UserDashboard() {
         <section className="grid gap-4 md:grid-cols-4">
           {userMetrics.map(([label, value]) => (
             <article
-              className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm"
+              className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur"
               key={label}
             >
               <p className="text-sm text-main-500">{label}</p>
@@ -63,7 +63,7 @@ export default function UserDashboard() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">
               Recommended market profile
             </h2>
@@ -85,12 +85,12 @@ export default function UserDashboard() {
             </div>
           </article>
 
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">Next action plan</h2>
             <ol className="mt-4 space-y-3">
               {actionPlan.map((item, index) => (
-                <li className="flex gap-3 rounded-md bg-main-50 p-4 text-sm text-main-700" key={item}>
-                  <span className="grid size-6 shrink-0 place-items-center rounded bg-primary-100 text-xs font-semibold text-primary-800">
+                <li className="flex gap-3 rounded-lg bg-main-50 p-4 text-sm text-main-700" key={item}>
+                  <span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800">
                     {index + 1}
                   </span>
                   {item}

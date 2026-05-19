@@ -71,7 +71,7 @@ const risks = [
 export default function AdminDashboard() {
   return (
     <>
-      <header className="border-b border-main-200 bg-main-0/90 px-4 py-4 backdrop-blur md:px-8">
+      <header className="rounded-lg border border-main-200/80 bg-main-0/85 px-4 py-4 shadow-lg shadow-main-900/5 backdrop-blur md:px-8">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">
@@ -82,39 +82,39 @@ export default function AdminDashboard() {
             </h1>
           </div>
           <div className="grid gap-2 sm:grid-cols-4">
-            <select className="rounded-md border border-main-200 bg-main-0 px-3 py-2 text-sm outline-none ring-primary-300 focus:ring-2">
+            <select className="rounded-full border border-main-200 bg-main-50 px-3 py-2 text-sm outline-none ring-primary-300 focus:border-primary-300 focus:bg-main-0 focus:ring-2">
               <option>Retail food</option>
               <option>Health services</option>
               <option>Digital services</option>
             </select>
-            <select className="rounded-md border border-main-200 bg-main-0 px-3 py-2 text-sm outline-none ring-primary-300 focus:ring-2">
+            <select className="rounded-full border border-main-200 bg-main-50 px-3 py-2 text-sm outline-none ring-primary-300 focus:border-primary-300 focus:bg-main-0 focus:ring-2">
               <option>Nairobi region</option>
               <option>Mombasa region</option>
               <option>Kisumu region</option>
             </select>
-            <select className="rounded-md border border-main-200 bg-main-0 px-3 py-2 text-sm outline-none ring-primary-300 focus:ring-2">
+            <select className="rounded-full border border-main-200 bg-main-50 px-3 py-2 text-sm outline-none ring-primary-300 focus:border-primary-300 focus:bg-main-0 focus:ring-2">
               <option>Last 12 months</option>
               <option>Last 6 months</option>
               <option>Last quarter</option>
             </select>
-            <button className="rounded-md bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-800">
+            <button className="rounded-full bg-primary-700 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-900/15 hover:bg-primary-800">
               Run Analysis
             </button>
           </div>
         </div>
       </header>
 
-      <div className="space-y-6 px-4 py-6 md:px-8">
+      <div className="space-y-6 py-6">
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {metrics.map((metric) => (
             <article
-              className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm"
+              className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur"
               key={metric.label}
             >
               <div className="flex items-start justify-between gap-3">
                 <p className="text-sm font-medium text-main-600">{metric.label}</p>
                 <span
-                  className={`rounded px-2 py-1 text-xs font-semibold ${
+                  className={`rounded-full px-3 py-1 text-xs font-semibold ${
                     metric.tone === "success"
                       ? "bg-success-100 text-success-800"
                       : metric.tone === "warning"
@@ -134,7 +134,7 @@ export default function AdminDashboard() {
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[1.4fr_0.8fr]">
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-lg font-semibold text-main-950">
@@ -144,7 +144,7 @@ export default function AdminDashboard() {
                   Machine learning projection from sales, search, and survey signals.
                 </p>
               </div>
-              <span className="w-fit rounded bg-accent-100 px-2.5 py-1 text-xs font-semibold text-accent-800">
+              <span className="w-fit rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-800">
                 Confidence 88%
               </span>
             </div>
@@ -155,7 +155,7 @@ export default function AdminDashboard() {
                   key={`${height}-${index}`}
                 >
                   <div
-                    className="w-full rounded-t bg-primary-600"
+                    className="w-full rounded-t-lg bg-primary-600"
                     style={{ height: `${height}%` }}
                     title={`Month ${index + 1}: ${height}`}
                   />
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
             </div>
           </article>
 
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">
               Customer Preference Segments
             </h2>
@@ -189,19 +189,19 @@ export default function AdminDashboard() {
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[1fr_1fr]">
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">
               Recommended Decisions
             </h2>
             <div className="mt-4 space-y-3">
               {opportunities.map((item) => (
                 <div
-                  className="rounded-md border border-main-200 bg-main-50 p-4"
+                  className="rounded-lg border border-main-200 bg-main-50 p-4"
                   key={item.title}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="font-semibold text-main-950">{item.title}</h3>
-                    <span className="shrink-0 rounded bg-success-100 px-2 py-1 text-xs font-semibold text-success-800">
+                    <span className="shrink-0 rounded-full bg-success-100 px-3 py-1 text-xs font-semibold text-success-800">
                       {item.confidence}
                     </span>
                   </div>
@@ -211,11 +211,11 @@ export default function AdminDashboard() {
             </div>
           </article>
 
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">
               Competition Snapshot
             </h2>
-            <div className="mt-4 overflow-hidden rounded-md border border-main-200">
+            <div className="mt-4 overflow-hidden rounded-lg border border-main-200">
               <table className="w-full min-w-[520px] border-collapse text-left text-sm">
                 <thead className="bg-main-100 text-main-600">
                   <tr>
@@ -245,7 +245,7 @@ export default function AdminDashboard() {
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <h2 className="text-lg font-semibold text-main-950">Risk Monitor</h2>
             <div className="mt-5 space-y-4">
               {risks.map((risk) => (
@@ -265,7 +265,7 @@ export default function AdminDashboard() {
             </div>
           </article>
 
-          <article className="rounded-md border border-main-200 bg-main-0 p-5 shadow-sm">
+          <article className="rounded-lg border border-main-200/80 bg-main-0/85 p-5 shadow-lg shadow-main-900/5 backdrop-blur">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="text-lg font-semibold text-main-950">
@@ -275,14 +275,14 @@ export default function AdminDashboard() {
                   Prepared for investor briefs and business planning reviews.
                 </p>
               </div>
-              <button className="w-fit rounded-md border border-primary-200 px-4 py-2 text-sm font-semibold text-primary-800 hover:bg-primary-50">
+              <button className="w-fit rounded-full border border-primary-200 bg-main-0/70 px-5 py-2 text-sm font-semibold text-primary-800 hover:bg-primary-50">
                 Export Report
               </button>
             </div>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
               {["Market is viable", "Niche positioning advised", "Pilot before scale"].map(
                 (item) => (
-                  <div className="rounded-md bg-main-50 p-4" key={item}>
+                  <div className="rounded-lg bg-main-50 p-4" key={item}>
                     <p className="text-sm font-semibold text-main-950">{item}</p>
                     <p className="mt-2 text-xs leading-5 text-main-600">
                       Evidence combines trend detection, preference clustering,

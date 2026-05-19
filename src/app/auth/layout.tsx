@@ -6,11 +6,11 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="min-h-screen bg-main-50 text-main-900">
+    <main className="min-h-screen text-main-900">
       <div className="mx-auto grid min-h-screen max-w-6xl px-4 py-6 md:px-8 lg:grid-cols-[0.9fr_1fr]">
-        <section className="hidden border-r border-main-200 pr-10 lg:flex lg:flex-col lg:justify-between">
+        <section className="hidden rounded-lg border border-main-200/80 bg-main-0/75 p-8 shadow-2xl shadow-main-900/10 backdrop-blur lg:flex lg:flex-col lg:justify-between">
           <Link className="flex items-center gap-3" href="/">
-            <div className="grid size-10 place-items-center rounded-md bg-primary-700 text-sm font-black text-white">
+            <div className="grid size-10 place-items-center rounded-full bg-primary-700 text-sm font-black text-white shadow-lg shadow-primary-900/10">
               M
             </div>
             <div>

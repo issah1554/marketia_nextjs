@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LoginPage() {
   return (
-    <div className="w-full max-w-md rounded-md border border-main-200 bg-main-0 p-6 shadow-sm">
+    <div className="w-full max-w-md rounded-lg border border-main-200/80 bg-main-0/90 p-7 shadow-2xl shadow-main-900/10 backdrop-blur">
       <p className="text-xs font-semibold uppercase tracking-wide text-primary-700">
         Welcome back
       </p>
@@ -13,7 +13,7 @@ export default function LoginPage() {
         <label className="block">
           <span className="text-sm font-medium text-main-700">Email address</span>
           <input
-            className="mt-2 w-full rounded-md border border-main-200 bg-main-0 px-3 py-2 outline-none ring-primary-300 focus:ring-2"
+            className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
             placeholder="you@example.com"
             type="email"
           />
@@ -21,12 +21,12 @@ export default function LoginPage() {
         <label className="block">
           <span className="text-sm font-medium text-main-700">Password</span>
           <input
-            className="mt-2 w-full rounded-md border border-main-200 bg-main-0 px-3 py-2 outline-none ring-primary-300 focus:ring-2"
+            className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
             placeholder="Enter password"
             type="password"
           />
         </label>
-        <button className="w-full rounded-md bg-primary-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-800">
+        <button className="w-full rounded-full bg-primary-700 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-900/15 transition hover:bg-primary-800">
           Sign In
         </button>
       </form>
