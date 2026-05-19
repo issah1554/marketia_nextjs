@@ -26,10 +26,26 @@ export default function LoginPage() {
             type="password"
           />
         </label>
+        <div className="flex justify-end">
+          <Link
+            className="text-sm font-semibold text-primary-700 hover:text-primary-800"
+            href="/auth/forgot-password"
+          >
+            Forgot password?
+          </Link>
+        </div>
         <button className="w-full rounded-full bg-primary-700 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-900/15 transition hover:bg-primary-800">
           Sign In
         </button>
       </form>
+      <div className="mt-5 grid gap-2 rounded-lg bg-main-50 p-3 text-center text-sm">
+        <Link className="font-semibold text-primary-700" href="/auth/two-factor">
+          Verify 2FA code
+        </Link>
+        <Link className="font-semibold text-primary-700" href="/auth/verify-email">
+          Verify email token
+        </Link>
+      </div>
       <p className="mt-5 text-center text-sm text-main-600">
         No account?{" "}
         <Link className="font-semibold text-primary-700" href="/auth/register">
