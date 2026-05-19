@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Marketia | Decision Support System",
   description:
     "A market analysis decision support dashboard for entrepreneurs and business owners.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
