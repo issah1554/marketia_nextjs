@@ -21,6 +21,7 @@ export default function RegisterForm() {
           <span className="text-sm font-medium text-main-700">Full name</span>
           <input
             className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
+            defaultValue={state.fields?.name}
             name="name"
             placeholder="Jane Founder"
             required
@@ -31,6 +32,7 @@ export default function RegisterForm() {
           <span className="text-sm font-medium text-main-700">Email address</span>
           <input
             className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
+            defaultValue={state.fields?.email}
             name="email"
             placeholder="you@example.com"
             required
@@ -41,6 +43,7 @@ export default function RegisterForm() {
           <span className="text-sm font-medium text-main-700">Password</span>
           <input
             className="mt-2 w-full rounded-full border border-main-200 bg-main-50 px-4 py-3 outline-none ring-primary-300 transition focus:border-primary-300 focus:bg-main-0 focus:ring-2"
+            defaultValue={state.fields?.password}
             minLength={8}
             name="password"
             placeholder="Create password"

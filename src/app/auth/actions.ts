@@ -2,6 +2,11 @@
 
 export type RegisterState = {
   error?: string;
+  fields?: {
+    email: string;
+    name: string;
+    password: string;
+  };
   message?: string;
   ok: boolean;
 };
@@ -54,6 +59,7 @@ export async function registerUser(
   if (!name || !email || !password) {
     return {
       error: "Name, email, and password are required.",
+      fields: { email, name, password },
       ok: false,
     };
   }
@@ -71,6 +77,7 @@ export async function registerUser(
     if (!response.ok) {
       return {
         error: await getErrorMessage(response),
+        fields: { email, name, password },
         ok: false,
       };
     }
@@ -84,6 +91,7 @@ export async function registerUser(
     return {
       error:
         "Could not reach the auth server. Make sure it is running on localhost:8000.",
+      fields: { email, name, password },
       ok: false,
     };
   }
