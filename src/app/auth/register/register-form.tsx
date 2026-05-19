@@ -14,6 +14,8 @@ type RegisterResponse = {
   message?: string;
 };
 
+const AUTH_API_URL = "http://127.0.0.1:8000";
+
 export default function RegisterForm() {
   const [fields, setFields] = useState<FormFields>({
     email: "",
@@ -31,7 +33,7 @@ export default function RegisterForm() {
     setIsPending(true);
 
     try {
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch(`${AUTH_API_URL}/auth/register`, {
         body: JSON.stringify(fields),
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +53,9 @@ export default function RegisterForm() {
       );
       setFields({ email: "", name: "", password: "" });
     } catch {
-      setError("Registration failed. Please try again.");
+      setError(
+        "Could not reach the auth server. Check FastAPI and CORS, then try again.",
+      );
     } finally {
       setIsPending(false);
     }
